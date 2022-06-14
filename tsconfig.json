@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "module": "AMD",
+    "target": "es5",
+    "allowJs": true,
+    "moduleResolution": "node"
+  },
+  "files": ["src/promote-artifact-version-task/index.ts"]
+}

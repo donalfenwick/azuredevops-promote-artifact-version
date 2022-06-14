@@ -1,0 +1,32 @@
+{
+    "manifestVersion": 1,
+    "id": "promote-artifact-version",
+    "publisher": "DonalFenwick",
+    "version": "1.0.2",
+    "name": "Promote artifact version",
+    "description": "Plugin for promoting artifacts from a dev feed to PreRelease/Release feed",
+    "public": false,
+    "categories": ["Azure Repos"],
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "promote-artifact-version",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "promote-artifact-version"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "promote-artifact-version"
+        }
+    ]
+}
