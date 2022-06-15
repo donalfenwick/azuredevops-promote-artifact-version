@@ -5,7 +5,7 @@
     "version": "{{version}}",
     "name": "Promote artifact version",
     "description": "Plugin for promoting artifacts from a dev feed to PreRelease/Release feed",
-    "public": false,
+    "public": true,
     "categories": ["Azure Repos", "Azure Artifacts"],
     "targets": [
         {
