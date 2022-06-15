@@ -2,24 +2,6 @@ import * as task from 'azure-pipelines-task-lib/task';
 import { IRestResponse, RestClient } from 'typed-rest-client';
 import { BasicAuthHandler } from './auth/basic-auth-handler';
 
-function extractHostname(url:string) {
-    var hostname;
-    //find & remove protocol (http, ftp, etc.) and get hostname
-  
-    if (url.indexOf("//") > -1) {
-      hostname = url.split('/')[2];
-    } else {
-      hostname = url.split('/')[0];
-    }
-  
-    //find & remove port number
-    hostname = hostname.split(':')[0];
-    //find & remove "?"
-    hostname = hostname.split('?')[0];
-  
-    return hostname;
-  }
-
 async function run() {
     try {
         const packageFeedName: string | undefined = task.getInput('packageFeedName', true);
@@ -75,8 +57,6 @@ async function run() {
             task.setResult(task.TaskResult.Failed, `Unsupported domain type for domain "${hostName}"`);
             return;
         }
-        console.log('feedsApiBaseUrl: ', feedsApiBaseUrl);
-        console.log('packagesApiBaseUrl: ', packagesApiBaseUrl);
 
         // setup a HTTP client for accessing the feed api
         let feedsApiHttpClient: RestClient = new RestClient('feeds-client', feedsApiBaseUrl, [new BasicAuthHandler()]);
@@ -152,7 +132,6 @@ async function run() {
                 updateUrl = `/${urlPrefixSegment}/_apis/Packaging/Feeds/${packageFeed.id}/${feedType}/packages/${pkg.name}/versions/${pkgVersion.version}?api-version=5.0-preview.1`;
         }
 
-        console.log('promote to view', packageFeedView);
         var body = {
             views: {
                 op: "add",
