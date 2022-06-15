@@ -18,6 +18,7 @@ const config = {
         { from:  "./src/promote-artifact-version-task/*.png", to: "[name][ext]",  },
         { from:  "./overview.md", to: "../[name][ext]",  },
         { from:  "./manifest/*.json", to: "../[name][ext]",  },
+        { from:  "./manifest/icon.png", to: "../[name][ext]",  },
       ],
     }),
     webpackExt.VersionStringReplacer(path.resolve("./dist"), [
