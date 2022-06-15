@@ -2,7 +2,7 @@
     "manifestVersion": 1,
     "id": "promote-artifact-version",
     "publisher": "DonalFenwick",
-    "version": "1.0.2",
+    "version": "{{version}}",
     "name": "Promote artifact version",
     "description": "Plugin for promoting artifacts from a dev feed to PreRelease/Release feed",
     "public": false,

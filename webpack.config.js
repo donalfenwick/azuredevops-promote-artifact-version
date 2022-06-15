@@ -1,13 +1,14 @@
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 const CopyPlugin = require("copy-webpack-plugin");
 const path = require("path");
+const webpackExt = require("./webpack-extensions");
 
 const isProduction = process.env.NODE_ENV == "production";
 
 const config = {
   entry: "./src/promote-artifact-version-task/index.ts",
   output: {
-    path: path.resolve(__dirname, "promote-artifact-version"),
+    path: path.resolve(__dirname, "dist/promote-artifact-version"),
     filename: 'index.js',
   },
   plugins: [
@@ -15,8 +16,13 @@ const config = {
       patterns: [
         { from:  "./src/promote-artifact-version-task/*.json", to: "[name][ext]",  },
         { from:  "./src/promote-artifact-version-task/*.png", to: "[name][ext]",  },
+        { from:  "./manifest/*.json", to: "../[name][ext]",  },
       ],
     }),
+    webpackExt.VersionStringReplacer(path.resolve("./dist"), [
+      "./vss-extension.json",
+      "./promote-artifact-version/task.json"
+    ]),
   ],target: 'node',
   module: {
     rules: [

@@ -47,5 +47,5 @@ $env:ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN="<PAT>"
 ### Generating a VISX package for upload to azure deops
 
 ```
-npm run package-extension
+npm run package
 ```
