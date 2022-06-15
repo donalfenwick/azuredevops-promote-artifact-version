@@ -12,9 +12,17 @@
             "id": "Microsoft.VisualStudio.Services"
         }
     ],
+    "icons": {
+        "default": "promote-artifact-version/icon.png"
+    },
     "repository": {
         "type": "git",
         "uri": "https://github.com/donalfenwick/azuredevops-promote-artifact-version"
+    },
+    "content": {
+        "details": {
+            "path": "overview.md"
+        }
     },
     "contributions": [
         {

@@ -16,6 +16,7 @@ const config = {
       patterns: [
         { from:  "./src/promote-artifact-version-task/*.json", to: "[name][ext]",  },
         { from:  "./src/promote-artifact-version-task/*.png", to: "[name][ext]",  },
+        { from:  "./overview.md", to: "../[name][ext]",  },
         { from:  "./manifest/*.json", to: "../[name][ext]",  },
       ],
     }),
