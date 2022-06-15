@@ -1,6 +1,6 @@
 {
   "name": "promote-artifact-version-azure-pipeline-task",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Task for promoting artifact versions in package feeds on azure devops",
   "main": "index.js",
   "scripts": {
