@@ -13,7 +13,7 @@
         }
     ],
     "icons": {
-        "default": "promote-artifact-version/icon.png"
+        "default": "icon.png"
     },
     "repository": {
         "type": "git",

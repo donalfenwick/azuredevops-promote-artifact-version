@@ -20,4 +20,4 @@ A plugin for azure devops build pipelines to allow the automatic promotion of pa
 | packageName     | Y        | The name of the package to be promoted                                    |
 | packageFeedName | Y        | The name of the feed the package exists in (can be project or org scope)  |
 | packageVersion  | Y        | The version of the package that should be promoted to the target view     |
-| packageFeedName | Y        | The name of the view to promote the package to                            |
+| viewName        | Y        | The name of the view to promote the package to                            |
