@@ -44,13 +44,23 @@ This is only required for running localy, a short lived token is automatically g
 $env:ENDPOINT_AUTH_PARAMETER_SYSTEMVSSCONNECTION_ACCESSTOKEN="<PAT>"
 ```
 
+## Run the task
+```
+cd dist/promote-artifact-version
+node ./index.js
+```
+
+
 ### Generating a VISX package for upload to azure deops
 
 **Increment version**
 ```
 npm run package
 ```
-
+**Create build with new version number**
+```
+npm run build
+```
 **Generate VISX package in the dist dir**
 ```
 npm run package
