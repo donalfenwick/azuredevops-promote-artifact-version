@@ -75,13 +75,15 @@ async function run() {
             task.setResult(task.TaskResult.Failed, `Unsupported domain type for domain "${hostName}"`);
             return;
         }
+        console.log('feedsApiBaseUrl: ', feedsApiBaseUrl);
+        console.log('packagesApiBaseUrl: ', packagesApiBaseUrl);
 
         // setup a HTTP client for accessing the feed api
         let feedsApiHttpClient: RestClient = new RestClient('feeds-client', feedsApiBaseUrl, [new BasicAuthHandler()]);
         
-
+        let urlPrefixSegment = (useNewUrlFormat === true) ? devopsOrgAccountName : 'DefaultCollection';
         // call the API to get all feeds in the org to search for the feed ID
-        let feedUrl = `/${devopsOrgAccountName}/_apis/packaging/feeds`;
+        let feedUrl = `/${urlPrefixSegment}/_apis/packaging/feeds`;
         let feedResponse: IRestResponse<ApiResults<PackageFeedRef>> = await feedsApiHttpClient.get<ApiResults<PackageFeedRef>>(feedUrl);
         if(feedResponse.statusCode !== 200 || !feedResponse.result){
             task.setResult(task.TaskResult.Failed, `Package feed with name "${packageFeedName}" was not found`);
@@ -93,7 +95,6 @@ async function run() {
             return;
         }
         // if the discovered feed is project specific then the prefix becomes a combination of the org and the project id
-        let urlPrefixSegment = (useNewUrlFormat === true) ? devopsOrgAccountName : 'DefaultCollection';
         if(packageFeed.project){
             urlPrefixSegment += `/${packageFeed.project.id}`;
         }
