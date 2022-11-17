@@ -55,7 +55,7 @@ node ./index.js
 
 **Increment version**
 ```
-npm run package
+npm version {major/minor/patch}
 ```
 **Create build with new version number**
 ```
