@@ -6,7 +6,7 @@ async function run() {
     try {
         const packageFeedName: string | undefined = task.getInput('packageFeedName', true);
         const packageName: string | undefined = task.getInput('packageName', true);
-        const packageVersion: string | undefined = task.getInput('packageVersion', true);
+        const packageVersion: string | undefined = task.getInput('packageVersion', true)?.trim();
         const viewName: string | undefined = task.getInput('viewName', true);
 
         if (!packageFeedName || packageFeedName.trimEnd() == '') {
