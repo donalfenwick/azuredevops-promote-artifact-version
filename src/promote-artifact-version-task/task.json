@@ -50,6 +50,10 @@
     "execution": {
         "Node10": {
             "target": "index.js"
+        },
+        "Node16": {
+          "target": "bash.js",
+          "argumentFormat": ""
         }
     }
 }
