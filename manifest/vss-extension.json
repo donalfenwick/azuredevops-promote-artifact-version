@@ -9,7 +9,7 @@
     "categories": ["Azure Repos", "Azure Artifacts"],
     "targets": [
         {
-            "id": "Microsoft.VisualStudio.Services"
+            "id": "Microsoft.VisualStudio.Services.Cloud"
         }
     ],
     "icons": {
