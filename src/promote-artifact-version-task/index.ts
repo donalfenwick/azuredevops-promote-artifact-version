@@ -128,6 +128,11 @@ async function run() {
             case 'pypi': 
                 updateUrl = `/${urlPrefixSegment}/_apis/Packaging/Feeds/${packageFeed.id}/${feedType}/packages/${pkg.name}/versions/${pkgVersion.version}?api-version=5.0-preview.1`;
                 break;
+            case 'maven':
+                let groupId = pkg.name.split(':')[0]
+                let artifactId = pkg.name.split(':')[1]
+                updateUrl = `/${urlPrefixSegment}/_apis/Packaging/Feeds/${packageFeed.id}/maven/groups/${groupId}/artifacts/${artifactId}/versions/${pkgVersion.version}?api-version=5.0-preview.1`
+                break;
             default: 
                 updateUrl = `/${urlPrefixSegment}/_apis/Packaging/Feeds/${packageFeed.id}/${feedType}/packages/${pkg.name}/versions/${pkgVersion.version}?api-version=5.0-preview.1`;
         }
